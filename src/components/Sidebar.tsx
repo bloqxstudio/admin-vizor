@@ -62,7 +62,7 @@ export default function Sidebar({ userEmail }: { userEmail: string }) {
   return (
     <aside style={styles.aside}>
       {/* Logo */}
-      <div style={styles.logo}>
+      <Link href="/dashboard" style={styles.logo}>
         <div style={styles.logoIcon}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="3" width="7" height="7" rx="1"/>
@@ -72,7 +72,7 @@ export default function Sidebar({ userEmail }: { userEmail: string }) {
           </svg>
         </div>
         <span style={styles.logoText}>Admin Panel</span>
-      </div>
+      </Link>
 
       {/* Nav */}
       <nav style={styles.nav}>
@@ -150,6 +150,8 @@ const styles: Record<string, React.CSSProperties> = {
     gap: '10px',
     padding: '20px 16px',
     borderBottom: '1px solid var(--border)',
+    textDecoration: 'none',
+    cursor: 'pointer',
   },
   logoIcon: {
     width: '30px',
