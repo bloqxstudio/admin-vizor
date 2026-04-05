@@ -75,7 +75,7 @@ export default function ProductsTable({ products }: { products: Product[] }) {
   async function uploadImage(productId: string, file: File): Promise<string | null> {
     const supabase = createClient()
     const ext = file.name.split('.').pop()
-    const path = `products/${productId}.${ext}`
+    const path = `products/${productId}_${Date.now()}.${ext}`
 
     const { error } = await supabase.storage
       .from('product-images')
